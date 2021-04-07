@@ -24,28 +24,28 @@ If you download ViSha and unzip each file, you can find the dataset structure as
 
 ViSha_release  
 +-- train  
-|&nbsp;&nbsp;&nbsp;&nbsp; +-- images
+|&nbsp;&nbsp;&nbsp;&nbsp; +-- images  
 |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_cat  
 |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.jpg  
-|   |   |   +-- 00000002.jpg  
-|   |   |   +-- ...  
-|   |   +-- baby_wave1 
-|   |   |   +-- 00000001.jpg  
-|   |   |   +-- 00000002.jpg  
-|   |   |   +-- ...  
-|   |   +-- ...  
-|   +-- labels
-|   |   +-- baby_cat  
-|   |   |   +-- 00000001.png  
-|   |   |   +-- 00000002.png  
-|   |   |   +-- ...  
-|   |   +-- baby_wave1 
-|   |   |   +-- 00000001.png  
-|   |   |   +-- 00000002.png  
-|   |   |   +-- ...  
-|   |   +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.jpg  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_wave1  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.jpg  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.jpg  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; +-- labels  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_cat  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.png  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.png  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_wave1  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.png  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.png  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
 +-- test  
-|   +-- ...
+|&nbsp;&nbsp;&nbsp;&nbsp; +-- ...
 
 
 
