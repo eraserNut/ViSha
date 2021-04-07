@@ -21,7 +21,7 @@ ViSha is a short name for "Video shadow detection dataset". As mentioned in abov
 To provide guidelines for future works, we randomly split the dataset into training and testing sets with a ratio of 5:7. The 50 training set and 70 testing set can be available in [[BaiduNetdisk](https://pan.baidu.com/s/1DYjXERQuIlbtNPe4wFcJXA)](pw: q0lh) or [Google Drive()].
 
 If you download ViSha and unzip each file, you can find the dataset structure as follows:
-`
+
 ViSha_release  
 +-- train  
 |   +-- images
@@ -46,7 +46,7 @@ ViSha_release
 |   |   +-- ...  
 +-- test  
 |   +-- ...
-`
+
 
 
 ## Trained Model
