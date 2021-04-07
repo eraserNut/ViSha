@@ -42,12 +42,12 @@ You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndq
 
 ## Testing
 1. Modify the data path on ./config.py
-2. Make sure you have a snapshot in ./models/TVSD (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h).)
+2. Make sure you have a snapshot in ./models/TVSD (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h) or [Google Drive]())
 4. Run by ```python infer.py``` to generate predicted masks
 5. Run by ```python evaluate.py``` to evaluate above results
 
 ## Results in ViSha testing set
-In ViSha testing set, we evaluate 12 related methods as follows: BDRAR[1], DSD[2], MTMT[3], FPN[4], PSPNet[5], DSS[6], R^3 Net[7], PDBM[8], COSNet[9], MAG[10], FEELVOS[11], STM[12]
+In ViSha testing set, we evaluate 12 related methods as follows: BDRAR[1], DSD[2], MTMT[3], FPN[4], PSPNet[5], DSS[6], R^3 Net[7], PDBM[8], COSNet[9], MAG[10], FEELVOS[11], STM[12]  
 [1]L. Zhu, Z. Deng, X. Hu, C.-W. Fu, X. Xu, J. Qin, and P.-A. Heng. Bidirectional feature pyramid network with recurrent attention residual modules for shadow detection. In ECCV, pages 121–136, 2018.  
 [2]Q. Zheng, X. Qiao, Y. Cao, and R.W. Lau. Distraction-aware shadow detection. In CVPR, pages 5167–5176, 2019.  
 [3]Z. Chen, L. Zhu, L. Wan, S. Wang, W. Feng, and P.-A. Heng. A multi-task mean teacher for semi-supervised shadow detection. In CVPR, pages 5611–5620, 2020.  
@@ -61,5 +61,4 @@ In ViSha testing set, we evaluate 12 related methods as follows: BDRAR[1], DSD[2
 [11]P. Voigtlaender, Y. Chai, F. Schroff, H. Adam, B. Leibe, and L.-C. Chen. Feelvos: Fast end-to-end embedding learning for video object segmentation. In CVPR, June 2019.  
 [12]S.W. Oh, J.-Y. Lee, N. Xu, and S.J. Kim. Video object segmentation using space-time memory networks. In ICCV, pages 9226–9235, 2019.  
 
-
-You can obtain it by [BaiduNetdisk]()
+You can obtain those results and the results of our TVSD in [BaiduNetdisk](https://pan.baidu.com/s/1t_PgW3JCrTGvf_PVyeR-iw)(pw: ritw) or [Google Drive]()
