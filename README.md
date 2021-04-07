@@ -21,24 +21,30 @@ ViSha is a short name for "Video shadow detection dataset". As mentioned in abov
 To provide guidelines for future works, we randomly split the dataset into training and testing sets with a ratio of 5:7. The 50 training set and 70 testing set can be available in [[BaiduNetdisk](https://pan.baidu.com/s/1DYjXERQuIlbtNPe4wFcJXA)](pw: q0lh) or [Google Drive()].
 
 If you download ViSha and unzip each file, you can find the dataset structure as follows:
-ViSha_release
-+-- _config.yml  
-+-- _drafts  
-|   +-- begin-with-the-crazy-ideas.textile
-|   +-- on-simplicity-in-technology.markdown
-+-- _includes
-|   +-- footer.html
-|   +-- header.html
-+-- _layouts
-|   +-- default.html
-|   +-- post.html
-+-- _posts
-|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
-+-- _data
-|   +-- members.yml
-+-- _site
-+-- index.html
+ViSha_release  
++-- train  
+|   +-- images
+|   |   +-- baby_cat  
+|   |   |   +-- 00000001.jpg  
+|   |   |   +-- 00000002.jpg  
+|   |   |   +-- ...  
+|   |   +-- baby_wave1 
+|   |   |   +-- 00000001.jpg  
+|   |   |   +-- 00000002.jpg  
+|   |   |   +-- ...  
+|   |   +-- ...  
+|   +-- labels
+|   |   +-- baby_cat  
+|   |   |   +-- 00000001.png  
+|   |   |   +-- 00000002.png  
+|   |   |   +-- ...  
+|   |   +-- baby_wave1 
+|   |   |   +-- 00000001.png  
+|   |   |   +-- 00000002.png  
+|   |   |   +-- ...  
+|   |   +-- ...  
++-- test  
+|   +-- ...
 
 
 
