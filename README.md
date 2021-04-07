@@ -22,8 +22,8 @@ To provide guidelines for future works, we randomly split the dataset into train
 
 If you download ViSha and unzip each file, you can find the dataset structure as follows:
 ViSha_release
-+-- _config.yml //
-+-- _drafts \\
++-- _config.yml  
++-- _drafts  
 |   +-- begin-with-the-crazy-ideas.textile
 |   +-- on-simplicity-in-technology.markdown
 +-- _includes
