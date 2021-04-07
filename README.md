@@ -23,7 +23,7 @@ To provide guidelines for future works, we randomly split the dataset into train
 If you download ViSha and unzip each file, you can find the dataset structure as follows:
 ViSha_release  
 +-- train  
-|   +-- images
+|     +-- images
 |   |   +-- baby_cat  
 |   |   |   +-- 00000001.jpg  
 |   |   |   +-- 00000002.jpg  
