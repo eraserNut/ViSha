@@ -47,7 +47,7 @@ ViSha_release
 +-- test  
 |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...
 
-
+<video src="./Visha_demo.mp4" width="800px" height="600px" controls="controls"></video>
 
 ## Trained Model
 You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/1yjnsjE7mDPnEaHxdtNFhhQ)(password: h52i).
