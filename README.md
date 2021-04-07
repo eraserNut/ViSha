@@ -22,8 +22,8 @@ To provide guidelines for future works, we randomly split the dataset into train
 
 If you download ViSha and unzip each file, you can find the dataset structure as follows:
 ViSha_release
-+-- _config.yml
-+-- _drafts
++-- _config.yml //
++-- _drafts \\
 |   +-- begin-with-the-crazy-ideas.textile
 |   +-- on-simplicity-in-technology.markdown
 +-- _includes
@@ -39,51 +39,7 @@ ViSha_release
 |   +-- members.yml
 +-- _site
 +-- index.html
->train
->>images
->>>baby_cat
->>>>00000001.jpg
->>>>00000002.jpg
->>>>...
 
->>>baby_wave1
->>>>00000001.jpg
->>>>00000002.jpg
->>>>...
-
->>labels
->>>baby_cat
->>>>00000001.png
->>>>00000002.png
->>>>...
-
->>>baby_wave1
->>>>00000001.png
->>>>00000002.png
->>>>...
-
->test
->>images
->>>airplane
->>>>00000001.jpg
->>>>>00000002.jpg
->>>>>...
-
->>>>airplane_dance
->>>>>00000001.jpg
->>>>>00000002.jpg
->>>>>...
-
->>>labels
->>>>airplane
->>>>>00000001.png
->>>>>00000002.png
->>>>>...
-
->>>>airplane_dance
->>>>>00000001.png
->>>>>00000002.png
->>>>>...
 
 
 ## Trained Model
