@@ -24,9 +24,9 @@ If you download ViSha and unzip each file, you can find the dataset structure as
 
 ViSha_release  
 +-- train  
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- images
-|   |   +-- baby_cat  
-|   |   |   +-- 00000001.jpg  
+|&nbsp;&nbsp;&nbsp;&nbsp; +-- images
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_cat  
+|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.jpg  
 |   |   |   +-- 00000002.jpg  
 |   |   |   +-- ...  
 |   |   +-- baby_wave1 
