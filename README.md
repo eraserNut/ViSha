@@ -15,69 +15,37 @@ by Zhihao Chen, Liang Wan, Lei Zhu, Jia Shen, Huazhu Fu, Wennan Liu, and Jing Qi
 &nbsp;&nbsp;&nbsp;&nbsp;  year  = {2021}    
 }
 
-## Introduction for ViSha
-ViSha is a short name for "Video shadow detection dataset". As mentioned in above paper, our dataset includes 120 videos with diverse content, varying length, and object-level annotations. More than half videos are from 5 widely-used video tracking benchmarks (i.e., OTB, VOT, LaSOT, TC-128, and NfS). The remaining 59 videos are self-captured with different hand-held cameras, over different scenes, at varying times. The frame rate is adjusted to 30 fps for all video sequences. Eventually, our video shadow detection dataset (ViSha) contains 120 video sequences, with a totally of 11,685 frames and 390 seconds duration. The longest video contains 103 frames and the shortest contains 11 frames.
-
-To provide guidelines for future works, we randomly split the dataset into training and testing sets with a ratio of 5:7. The 50 training set and 70 testing set can be available in [[BaiduNetdisk](https://pan.baidu.com/s/1DYjXERQuIlbtNPe4wFcJXA)](pw: q0lh) or [Google Drive()].
-
-If you download ViSha and unzip each file, you can find the dataset structure as follows:
-
-ViSha_release  
-+-- train  
-|&nbsp;&nbsp;&nbsp;&nbsp; +-- images  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_cat  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.jpg  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.jpg  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_wave1  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.jpg  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.jpg  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-|&nbsp;&nbsp;&nbsp;&nbsp; +-- labels  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_cat  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.png  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.png  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- baby_wave1  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000001.png  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- 00000002.png  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-|&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; +-- ...  
-+-- test  
-|&nbsp;&nbsp;&nbsp;&nbsp; +-- ...
-
-<video src="./Visha_demo.mp4" width="800px" height="600px" controls="controls"></video>
-
-## Trained Model
-You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/1yjnsjE7mDPnEaHxdtNFhhQ)(password: h52i).
+## Dataset
+ViSha dataset is available at [ViSha Homepage](https://erasernut.github.io/)
 
 ## Requirement
 * Python 3.6
-* PyTorch 1.3.1(After 0.4.0 would be ok)
+* PyTorch 1.3.1
 * torchvision
 * numpy
 * tqdm
 * PIL
-* pydensecrf ([here](https://github.com/Andrew-Qibin/dss_crf) to install)
+* math
+* time
+* datatime
+* argparse
+* apex (alternative, fp16 for save memory and speedup)
 
 ## Training
-1. Set ...
-2. Set ...
-3. Run by ```python train.py```
+1. Modify the data path on ./config.py
+2. Modify the pretrained backbone path on ./networks/resnext_modify/config.py
+3. Run by ```python train.py``` and model will be saved in ./models/TVSD
 
 The pretrained ResNeXt model is ported from the [official](https://github.com/facebookresearch/ResNeXt) torch version,
 using the [convertor](https://github.com/clcarwin/convert_torch_to_pytorch) provided by clcarwin. 
 You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndqI6MfF4LvH6JKNQ) the pretrained model ported by me.
 
 ## Testing
-1. Set ...
-2. Put ...
-2. Run by ```python infer.py```
+1. Modify the data path on ./config.py
+2. Make sure you have a snapshot in ./models/TVSD (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h).)
+4. Run by ```python infer.py``` to generate predicted masks
+5. Run by ```python evaluate.py``` to evaluate above results
 
-## Useful links
-UCF dataset: [Google Drive](https://drive.google.com/open?id=12DOmMVmE-oNuJVXmkBJrkfBvuDd0O70N) or [BaiduNetdisk](https://pan.baidu.com/s/1zt9ya1lzNcoGoc2CET3mdg)(password:o4ub for BaiduNetdisk)
-
-SBU dataset: [BaiduNetdisk](https://pan.baidu.com/s/1FYQYLSkuTivjaRJVjjJhJw)(password:38qw for BaiduNetdisk)
-
-Part of unlabel data that collected from internet: [BaiduNetdisk](https://pan.baidu.com/s/1_kdpwBlZ-K6gcZz45Tcg7g)(password: n1nb for BaiduNetdisk)
+## Results in ViSha testing set
+In ViSha testing set, we evaluate 12 related methods as follows:BDRAR[1], DSD[2], 
+You can obtain it by [BaiduNetdisk]()
