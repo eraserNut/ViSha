@@ -16,7 +16,7 @@ by Zhihao Chen, Liang Wan, Lei Zhu, Jia Shen, Huazhu Fu, Wennan Liu, and Jing Qi
 }
 
 ## Dataset
-ViSha dataset is available at [ViSha Homepage](https://erasernut.github.io/)
+ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/)**
 
 ## Requirement
 * Python 3.6
