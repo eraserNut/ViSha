@@ -10,7 +10,7 @@ by Zhihao Chen, Liang Wan, Lei Zhu, Jia Shen, Huazhu Fu, Wennan Liu, and Jing Qi
 ## Citation
 @inproceedings{chen21TVSD,   
 &nbsp;&nbsp;&nbsp;&nbsp;  author = {Chen, Zhihao and Wan, Liang and Zhu, Lei and Shen, Jia and Fu, Huazhu and Liu, Wennan and Qin, Jing},    
-&nbsp;&nbsp;&nbsp;&nbsp;  title = {A Multi-task Mean Teacher for Semi-supervised Shadow Detection},    
+&nbsp;&nbsp;&nbsp;&nbsp;  title = {Triple-cooperative Video Shadow Detection},    
 &nbsp;&nbsp;&nbsp;&nbsp;  booktitle = {CVPR},    
 &nbsp;&nbsp;&nbsp;&nbsp;  year  = {2021}    
 }
