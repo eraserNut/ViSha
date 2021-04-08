@@ -36,17 +36,17 @@ ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/ViS
 * apex (alternative, fp16 for save memory and speedup)
 
 ## Training
-1. Modify the data path on ./config.py
-2. Modify the pretrained backbone path on ./networks/resnext_modify/config.py
-3. Run by ```python train.py``` and model will be saved in ./models/TVSD
+1. Modify the data path on ```./config.py```
+2. Modify the pretrained backbone path on ```./networks/resnext_modify/config.py```
+3. Run by ```python train.py``` and model will be saved in ```./models/TVSD```
 
 The pretrained ResNeXt model is ported from the [official](https://github.com/facebookresearch/ResNeXt) torch version,
 using the [convertor](https://github.com/clcarwin/convert_torch_to_pytorch) provided by clcarwin. 
 You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndqI6MfF4LvH6JKNQ) the pretrained model ported by us.
 
 ## Testing
-1. Modify the data path on ./config.py
-2. Make sure you have a snapshot in ./models/TVSD (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h) or [Google Drive])
+1. Modify the data path on ```./config.py```
+2. Make sure you have a snapshot in ```./models/TVSD``` (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h) or [Google Drive])
 4. Run by ```python infer.py``` to generate predicted masks
 5. Run by ```python evaluate.py``` to evaluate the generated results
 
