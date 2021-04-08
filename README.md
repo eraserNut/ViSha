@@ -20,7 +20,7 @@ by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen
 }
 
 ## Dataset
-ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/)**
+ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/ViSha.html)**
 
 ## Requirement
 * Python 3.6
