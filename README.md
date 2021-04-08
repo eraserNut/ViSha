@@ -1,7 +1,12 @@
 # TVSD & ViSha
 Code and dataset for the CVPR 2021 paper "Triple-cooperative Video Shadow Detection"
 
-by Zhihao Chen, Liang Wan, Lei Zhu, Jia Shen, Huazhu Fu, Wennan Liu, and Jing Qin [[arXiv link](https://arxiv.org/abs/2103.06533)] [official link]
+by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen<sup>1</sup>, Huazhu Fu<sup>3</sup>, Wennan Liu<sup>4</sup>, and Jing Qin<sup>5</sup> [[arXiv link](https://arxiv.org/abs/2103.06533)] [official link]  
+<sup>1</sup>College of Intelligence and Computing, Tianjin University  
+<sup>2</sup>Department of Applied Mathematics and Theoretical Physics, University of Cambridge  
+<sup>3</sup>Inception Institute of Artiﬁcial Intelligence, UAE  
+<sup>4</sup>Academy of Medical Engineering and Translational Medicine, Tianjin University  
+<sup>5</sup>The Hong Kong Polytechnic University
 
 #### News: In 2021.4.7, We first release the code of TVSD and ViSha dataset.
 
