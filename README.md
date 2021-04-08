@@ -38,7 +38,7 @@ ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/)**
 
 The pretrained ResNeXt model is ported from the [official](https://github.com/facebookresearch/ResNeXt) torch version,
 using the [convertor](https://github.com/clcarwin/convert_torch_to_pytorch) provided by clcarwin. 
-You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndqI6MfF4LvH6JKNQ) the pretrained model ported by me.
+You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndqI6MfF4LvH6JKNQ) the pretrained model ported by us.
 
 ## Testing
 1. Modify the data path on ./config.py
