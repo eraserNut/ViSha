@@ -44,7 +44,7 @@ You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndq
 1. Modify the data path on ./config.py
 2. Make sure you have a snapshot in ./models/TVSD (Tips: You can download the trained model which is reported in our paper at [BaiduNetdisk](https://pan.baidu.com/s/17d-wLwA5oyafMdooJlesyw)(pw: 8p5h) or [Google Drive])
 4. Run by ```python infer.py``` to generate predicted masks
-5. Run by ```python evaluate.py``` to evaluate above results
+5. Run by ```python evaluate.py``` to evaluate the generated results
 
 ## Results in ViSha testing set
 In ViSha testing set, we evaluate 12 related methods as follows: BDRAR[1], DSD[2], MTMT[3], FPN[4], PSPNet[5], DSS[6], R^3 Net[7], PDBM[8], COSNet[9], MAG[10], FEELVOS[11], STM[12]  
