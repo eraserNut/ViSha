@@ -65,4 +65,4 @@ As mentioned in our paper, since there is no CNN-based method for video shadow d
 [11]P. Voigtlaender, Y. Chai, F. Schroff, H. Adam, B. Leibe, and L.-C. Chen. Feelvos: Fast end-to-end embedding learning for video object segmentation. In CVPR, June 2019.  
 [12]S.W. Oh, J.-Y. Lee, N. Xu, and S.J. Kim. Video object segmentation using space-time memory networks. In ICCV, pages 9226–9235, 2019.</small>
 
-We evaluate those methods and our TVSD in ViSha testing set and release all results in [BaiduNetdisk](https://pan.baidu.com/s/1t_PgW3JCrTGvf_PVyeR-iw)(pw: ritw) or [Google Drive]
+We evaluate those methods and our TVSD in ViSha testing set and release all results in [BaiduNetdisk](https://pan.baidu.com/s/1t_PgW3JCrTGvf_PVyeR-iw)(pw: ritw) or [Google Drive](https://drive.google.com/drive/folders/13XgGxu9DDuuz2vS6ugFrLLmXRZzoHWhb?usp=sharing)
