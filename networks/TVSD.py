@@ -3,10 +3,14 @@ import torch
 import torch.nn.functional as F
 from .DeepLabV3 import DeepLabV3
 
-#final model
-class TVSD(nn.Module):
-    def __init__(self, pretrained_path=None, num_classes=1, all_channel=256, all_dim=26 * 26, T=0.07):  # 416./16=26 416./8=52
-        super(TVSD, self).__init__()
+import torch.nn as nn
+import torch
+import torch.nn.functional as F
+from .DeepLabV3 import DeepLabV3
+
+class SCOSNet(nn.Module):
+    def __init__(self, pretrained_path=None, num_classes=1, all_channel=256, all_dim=26 * 26, T=0.07):  # 473./8=60 416./8=52
+        super(SCOSNet, self).__init__()
         self.encoder = DeepLabV3()
         self.T = T
         # load pretrained model from DeepLabV3 module
@@ -45,7 +49,6 @@ class TVSD(nn.Module):
         query_pre = self.final_pre(fuse_query)
         other_pre = self.final_pre(fuse_other)
 
-        # T-module
         # scene vector
         v1 = F.adaptive_avg_pool2d(exemplar, (1, 1)).squeeze(-1).squeeze(-1)
         v1 = nn.functional.normalize(v1, dim=1)
@@ -56,23 +59,25 @@ class TVSD(nn.Module):
 
         l_pos = torch.einsum('nc,nc->n', [v1, v2]).unsqueeze(-1)
         l_neg1 = torch.einsum('nc,nc->n', [v1, v3]).unsqueeze(-1)
+        # l_neg2 = torch.einsum('nc,nc->n', [v2, v3]).unsqueeze(-1)
+        # logits = torch.cat([l_pos, l_neg1, l_neg2], dim=1)
         logits = torch.cat([l_pos, l_neg1], dim=1)
-        logits /= self.T  # add temperature coefficient
+        logits /= self.T
         exemplar_pre = F.upsample(exemplar_pre, input_size, mode='bilinear', align_corners=False)  # upsample to the size of input image, scale=8
         query_pre = F.upsample(query_pre, input_size, mode='bilinear', align_corners=False)  # upsample to the size of input image, scale=8
         other_pre = F.upsample(other_pre, input_size, mode='bilinear', align_corners=False)  # upsample to the size of input image, scale=8
         return exemplar_pre, query_pre, other_pre, logits
 
 
-# Dual gated co-attention module
+
 class CoattentionModel(nn.Module):  # spatial and channel attention module
     def __init__(self, num_classes=1, all_channel=256, all_dim=26 * 26):  # 473./8=60 416./8=52
         super(CoattentionModel, self).__init__()
         self.linear_e = nn.Linear(all_channel, all_channel, bias=False)
         self.channel = all_channel
         self.dim = all_dim
-        self.gate1 = nn.Conv2d(all_channel*2, 1, kernel_size=1, bias=False)
-        self.gate2 = nn.Conv2d(all_channel*2, 1, kernel_size=1, bias=False)
+        self.gate1 = nn.Conv2d(all_channel * 2, 1, kernel_size=1, bias=False)
+        self.gate2 = nn.Conv2d(all_channel * 2, 1, kernel_size=1, bias=False)
         self.gate_s = nn.Sigmoid()
         self.conv1 = nn.Conv2d(all_channel * 2, all_channel, kernel_size=3, padding=1, bias=False)
         self.conv2 = nn.Conv2d(all_channel * 2, all_channel, kernel_size=3, padding=1, bias=False)
@@ -80,9 +85,9 @@ class CoattentionModel(nn.Module):  # spatial and channel attention module
         self.bn2 = nn.BatchNorm2d(all_channel)
         self.prelu = nn.ReLU(inplace=True)
         self.globalAvgPool = nn.AvgPool2d(26, stride=1)
-        self.fc1 = nn.Linear(in_features=256, out_features=16)
+        self.fc1 = nn.Linear(in_features=256*2, out_features=16)
         self.fc2 = nn.Linear(in_features=16, out_features=256)
-        self.fc3 = nn.Linear(in_features=256, out_features=16)
+        self.fc3 = nn.Linear(in_features=256*2, out_features=16)
         self.fc4 = nn.Linear(in_features=16, out_features=256)
         self.relu = nn.ReLU(inplace=True)
         self.sigmoid = nn.Sigmoid()
@@ -103,13 +108,34 @@ class CoattentionModel(nn.Module):  # spatial and channel attention module
         exemplar_att = torch.bmm(query_flat, B).contiguous()
         input1_att = exemplar_att.view(-1, query.size()[1], fea_size[0], fea_size[1])
         input2_att = query_att.view(-1, query.size()[1], fea_size[0], fea_size[1])
-
+        
+        # spacial attention
         input1_mask = self.gate1(torch.cat([input1_att, input2_att], dim=1))
         input2_mask = self.gate2(torch.cat([input1_att, input2_att], dim=1))
         input1_mask = self.gate_s(input1_mask)
         input2_mask = self.gate_s(input2_mask)
+
+        # channel attention
+        out_e = self.globalAvgPool(torch.cat([input1_att, input2_att], dim=1))
+        out_e = out_e.view(out_e.size(0), -1)
+        out_e = self.fc1(out_e)
+        out_e = self.relu(out_e)
+        out_e = self.fc2(out_e)
+        out_e = self.sigmoid(out_e)
+        out_e = out_e.view(out_e.size(0), out_e.size(1), 1, 1)
+        out_q = self.globalAvgPool(torch.cat([input1_att, input2_att], dim=1))
+        out_q = out_q.view(out_q.size(0), -1)
+        out_q = self.fc3(out_q)
+        out_q = self.relu(out_q)
+        out_q = self.fc4(out_q)
+        out_q = self.sigmoid(out_q)
+        out_q = out_q.view(out_q.size(0), out_q.size(1), 1, 1)
+
+        # apply dual attention masks
         input1_att = input1_att * input1_mask
         input2_att = input2_att * input2_mask
+        input2_att = out_e * input2_att
+        input1_att = out_q * input1_att
 
         # concate original feature
         input1_att = torch.cat([input1_att, exemplar], 1)
@@ -120,7 +146,6 @@ class CoattentionModel(nn.Module):  # spatial and channel attention module
         input2_att = self.bn2(input2_att)
         input1_att = self.prelu(input1_att)
         input2_att = self.prelu(input2_att)
-
 
         return input1_att, input2_att  # shape: NxCx
 
