@@ -3,11 +3,6 @@ import torch
 import torch.nn.functional as F
 from .DeepLabV3 import DeepLabV3
 
-import torch.nn as nn
-import torch
-import torch.nn.functional as F
-from .DeepLabV3 import DeepLabV3
-
 class SCOSNet(nn.Module):
     def __init__(self, pretrained_path=None, num_classes=1, all_channel=256, all_dim=26 * 26, T=0.07):  # 473./8=60 416./8=52
         super(SCOSNet, self).__init__()
