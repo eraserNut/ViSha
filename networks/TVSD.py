@@ -3,9 +3,9 @@ import torch
 import torch.nn.functional as F
 from .DeepLabV3 import DeepLabV3
 
-class SCOSNet(nn.Module):
+class TVSD(nn.Module):
     def __init__(self, pretrained_path=None, num_classes=1, all_channel=256, all_dim=26 * 26, T=0.07):  # 473./8=60 416./8=52
-        super(SCOSNet, self).__init__()
+        super(TVSD, self).__init__()
         self.encoder = DeepLabV3()
         self.T = T
         # load pretrained model from DeepLabV3 module
