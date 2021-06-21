@@ -1,5 +1,5 @@
 # Triple-cooperative Video Shadow Detection
-Code and dataset for the CVPR 2021 paper **"Triple-cooperative Video Shadow Detection"**[[arXiv link](https://arxiv.org/abs/2103.06533)] [official link](https://openaccess.thecvf.com/content/CVPR2021/papers/Chen_Triple-Cooperative_Video_Shadow_Detection_CVPR_2021_paper.pdf). 
+Code and dataset for the CVPR 2021 paper **"Triple-cooperative Video Shadow Detection"**[[arXiv link](https://arxiv.org/abs/2103.06533)] [[official link](https://openaccess.thecvf.com/content/CVPR2021/papers/Chen_Triple-Cooperative_Video_Shadow_Detection_CVPR_2021_paper.pdf)].  
 by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen<sup>1</sup>, Huazhu Fu<sup>3</sup>, Wennan Liu<sup>4</sup>, and Jing Qin<sup>5</sup>  
 <small><sup>1</sup>College of Intelligence and Computing, Tianjin University  
 <sup>2</sup>Department of Applied Mathematics and Theoretical Physics, University of Cambridge  
