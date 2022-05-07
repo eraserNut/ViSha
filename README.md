@@ -8,7 +8,7 @@ by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen
 <sup>5</sup>The Hong Kong Polytechnic University</small>
 
 #### News: In 2021.4.7, We first release the code of TVSD and ViSha dataset.
-#### News: In 2022.5.7, Lihao Liu publish a pytorch-lightning implementation for TVSD.
+#### News: In 2022.5.7, [Lihao Liu](https://github.com/lihaoliu-cambridge/cvpr-2023-vsd) publish a pytorch-lightning implementation for TVSD.
 
 ***
 
@@ -19,6 +19,9 @@ by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen
 &nbsp;&nbsp;&nbsp;&nbsp;  booktitle = {CVPR},    
 &nbsp;&nbsp;&nbsp;&nbsp;  year  = {2021}    
 }
+
+## Pytorch-lightning Version
+Pytorch-lightning Version is available at [https://github.com/lihaoliu-cambridge/cvpr-2023-vsd](https://github.com/lihaoliu-cambridge/cvpr-2023-vsd) implemented by [Lihao Liu](https://github.com/lihaoliu-cambridge)
 
 ## Dataset
 ViSha dataset is available at **[ViSha Homepage](https://erasernut.github.io/ViSha.html)**
