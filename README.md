@@ -8,6 +8,7 @@ by Zhihao Chen<sup>1</sup>, Liang Wan<sup>1</sup>, Lei Zhu<sup>2</sup>, Jia Shen
 <sup>5</sup>The Hong Kong Polytechnic University</small>
 
 #### News: In 2021.4.7, We first release the code of TVSD and ViSha dataset.
+#### News: In 2022.5.7, Lihao Liu publish a pytorch-lightning implementation for TVSD.
 
 ***
 
